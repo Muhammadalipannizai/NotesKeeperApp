@@ -23,6 +23,9 @@ function Input(props){
         });
     }
     function addNote(event){
+        if (note.title.trim() === "" && note.content.trim() === "") {
+            return
+        }
         props.onAdd(note);
         event.preventDefault();
        setNote({
